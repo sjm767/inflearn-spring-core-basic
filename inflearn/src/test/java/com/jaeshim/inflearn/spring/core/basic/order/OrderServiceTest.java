@@ -1,17 +1,24 @@
 package com.jaeshim.inflearn.spring.core.basic.order;
 
+import com.jaeshim.inflearn.spring.core.basic.AppConfig;
 import com.jaeshim.inflearn.spring.core.basic.member.Grade;
 import com.jaeshim.inflearn.spring.core.basic.member.Member;
 import com.jaeshim.inflearn.spring.core.basic.member.MemberService;
-import com.jaeshim.inflearn.spring.core.basic.member.MemberServiceImpl;
-import com.jaeshim.inflearn.spring.core.basic.member.MemberServiceTest;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-  MemberService memberService = new MemberServiceImpl();
-  OrderService orderService = new OrderServiceImpl();
+  MemberService memberService;
+  OrderService orderService;
+
+  @BeforeEach
+  public void beforeEach(){
+    AppConfig appConfig = new AppConfig();
+    memberService = appConfig.memberService();
+    orderService = appConfig.orderService();
+  }
 
 
   @Test
