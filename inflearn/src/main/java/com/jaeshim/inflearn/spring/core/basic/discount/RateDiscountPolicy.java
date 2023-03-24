@@ -2,7 +2,9 @@ package com.jaeshim.inflearn.spring.core.basic.discount;
 
 import com.jaeshim.inflearn.spring.core.basic.member.Grade;
 import com.jaeshim.inflearn.spring.core.basic.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
   private int discountPercent = 10;
