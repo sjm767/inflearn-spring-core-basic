@@ -1,5 +1,6 @@
 package com.jaeshim.inflearn.spring.core.basic.order;
 
+import com.jaeshim.inflearn.spring.core.basic.annotation.MainDiscountPolicy;
 import com.jaeshim.inflearn.spring.core.basic.discount.DiscountPolicy;
 import com.jaeshim.inflearn.spring.core.basic.member.Member;
 import com.jaeshim.inflearn.spring.core.basic.member.MemberRepository;
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
   private final DiscountPolicy discountPolicy;
 
   @Autowired
-  public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+  public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
     this.memberRepository = memberRepository;
     this.discountPolicy = discountPolicy;
   }
